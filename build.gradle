@@ -1,0 +1,44 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.2'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'application'
+}
+
+group = 'com.concentrix'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation('org.apache.httpcomponents:httpclient:4.5.13') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+	implementation group: 'org.json', name: 'json', version: '20240303'
+	implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+application {
+    mainClass = 'com.concentrix.happytalk.Server'
+}
+
+tasks.register('runSingle', JavaExec) {
+    mainClass = 'com.concentrix.happytalk.Server'
+    classpath = sourceSets.main.runtimeClasspath
+}

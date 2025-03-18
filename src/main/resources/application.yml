@@ -1,0 +1,17 @@
+# application.yml 에서 로깅 설정
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: /home/ec2-user/CREAM_Happytalk_Gateway_HLI/logs/application.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: /home/ec2-user/CREAM_Happytalk_Gateway_HLI/logs/application-%d{yyyy-MM-dd}.%i.log
+      max-file-size: 10MB
+      max-history: 30
