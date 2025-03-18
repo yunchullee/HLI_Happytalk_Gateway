@@ -2,8 +2,8 @@
 <configuration>
     <property name="CONSOLE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} - %msg%n" />
     <property name="ROLLING_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} - %msg%n" />
-    <property name="FILE_NAME" value="/home/ec2-user/CREAM_Happytalk_Gateway_HLI/logs/application.log" />
-    <property name="LOG_NAME_PATTERN" value="/home/ec2-user/CREAM_Happytalk_Gateway_HLI/logs/application-%d{yyyy-MM-dd}.%i.log" />
+    <property name="FILE_NAME" value="/home/ec2-user/HLI_Happytalk_Gateway/logs/application.log" />
+    <property name="LOG_NAME_PATTERN" value="/home/ec2-user/HLI_Happytalk_Gateway/logs/application-%d{yyyy-MM-dd}.%i.log" />
     <property name="MAX_FILE_SIZE" value="10MB" />
     <property name="MAX_HISTORY" value="30" />
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
